@@ -1,3 +1,1 @@
-pyqt-notifier>=0.0.1
-pyqt-timer-label>=0.0.1
-pyqt-svg-button>=0.0.1
+PySide6

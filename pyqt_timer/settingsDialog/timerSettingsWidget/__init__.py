@@ -1,2 +1,2 @@
-from .hourMinSecGrpBox import *
-from .timerSettingsWidget import *
+from .hourMinSecGrpBox import HourMinSecGrpBox
+from .timerSettingsWidget import TimerSettingsWidget

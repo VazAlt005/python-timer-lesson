@@ -11,7 +11,7 @@ setup(
     description='Simple timer made out of PyQt',
     url='https://github.com/yjg30737/pyqt-timer.git',
     install_requires=[
-        'PyQt5>=5.8',
+        'PySide6>=5.8',
         'pyqt-notifier>=0.0.1',
         'pyqt-timer-label>=0.0.1',
         'pyqt-svg-button>=0.0.1'

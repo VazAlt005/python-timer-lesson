@@ -1,1 +1,1 @@
-from .settingsDialog import *
+from .settingsDialog import SettingsDialog  # noqa: F401

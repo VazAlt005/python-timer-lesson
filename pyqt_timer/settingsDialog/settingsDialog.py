@@ -1,7 +1,6 @@
 
-from PyQt5 import Qt
-from PyQt5.QtWidgets import QDialog, QTabWidget, QVBoxLayout, QPushButton, QHBoxLayout, QWidget
-from PyQt5.QtCore import Qt
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QDialog, QTabWidget, QVBoxLayout, QPushButton, QHBoxLayout, QWidget
 
 from pyqt_timer.settingsDialog.timerSettingsWidget.timerSettingsWidget import TimerSettingsWidget
 
@@ -13,7 +12,7 @@ class SettingsDialog(QDialog):
 
     def __initUi(self):
         self.setWindowTitle('Settings')
-        self.setWindowFlags(Qt.WindowMinMaxButtonsHint | Qt.WindowCloseButtonHint)
+        self.setWindowFlags(Qt.WindowType.WindowCloseButtonHint | Qt.WindowType.WindowCloseButtonHint)
 
         self.__timerSettingsWidget = TimerSettingsWidget()
 

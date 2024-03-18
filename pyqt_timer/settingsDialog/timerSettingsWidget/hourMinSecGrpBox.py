@@ -1,14 +1,14 @@
-from PyQt5.QtCore import QSettings
-from PyQt5.QtWidgets import QGroupBox, QSpinBox, QSizePolicy, QFormLayout
+from PySide6.QtCore import QSettings
+from PySide6.QtWidgets import QGroupBox, QSpinBox, QSizePolicy, QFormLayout
 
 
 class HourMinSecGrpBox(QGroupBox):
     def __init__(self):
         super().__init__()
-        self.__settings_struct = QSettings('timerSettings.ini', QSettings.IniFormat)
-        self.__hour = int(self.__settings_struct.value('hour', 0))
-        self.__min = int(self.__settings_struct.value('min', 0))
-        self.__sec = int(self.__settings_struct.value('sec', 0))
+        self.__settings_struct = QSettings('timerSettings.ini', QSettings.Format.IniFormat)
+        self.__hour = int(self.__settings_struct.value('hour', 0))  # type: ignore
+        self.__min = int(self.__settings_struct.value('min', 0))  # type: ignore
+        self.__sec = int(self.__settings_struct.value('sec', 0))  # type: ignore
         self.__initUi()
 
     def __initUi(self):
@@ -20,10 +20,11 @@ class HourMinSecGrpBox(QGroupBox):
         self.__minSpinBox.setValue(self.__min)
         self.__secSpinBox.setValue(self.__sec)
 
-        self.__hourSpinBox.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
-        self.__minSpinBox.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
-        self.__secSpinBox.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
+        self.__hourSpinBox.setSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.MinimumExpanding)
+        self.__minSpinBox.setSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.MinimumExpanding)
+        self.__secSpinBox.setSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.MinimumExpanding)
 
+        self.__hourSpinBox.setRange(0, 23)
         self.__minSpinBox.setRange(0, 59)
         self.__secSpinBox.setRange(0, 59)
 

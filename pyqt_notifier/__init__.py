@@ -1,0 +1,1 @@
+from .pyqtNotifier import NotifierWidget  # noqa: F401

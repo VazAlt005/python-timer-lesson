@@ -1,5 +1,5 @@
-from PyQt5.QtCore import QSettings
-from PyQt5.QtWidgets import QWidget, QHBoxLayout
+from PySide6.QtCore import QSettings
+from PySide6.QtWidgets import QWidget, QHBoxLayout
 
 from pyqt_timer.settingsDialog.timerSettingsWidget.hourMinSecGrpBox import HourMinSecGrpBox
 
@@ -7,7 +7,7 @@ from pyqt_timer.settingsDialog.timerSettingsWidget.hourMinSecGrpBox import HourM
 class TimerSettingsWidget(QWidget):
     def __init__(self):
         super().__init__()
-        self.__settings_struct = QSettings('timerSettings.ini', QSettings.IniFormat)
+        self.__settings_struct = QSettings('timerSettings.ini', QSettings.Format.IniFormat)
         self.__initUi()
 
     def __initUi(self):
